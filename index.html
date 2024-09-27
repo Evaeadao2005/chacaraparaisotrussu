@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chácara Paraíso Trussu</title>
+    
+    <!-- Link para o Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Reset de margens e preenchimentos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #e0f7fa; /* Azul claro */
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px; /* Logo retangular */
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        /* Seção Principal */
+        .main-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .main-section h2 {
+            color: #00796b; /* Verde */
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .main-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Galeria de Fotos */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Múltiplas colunas */
+            gap: 15px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Botões */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .maps-button, .whatsapp-button, .instagram-button {
+            background-color: #25D366; /* Cor oficial do WhatsApp */
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px 0; /* Espaçamento entre botões */
+        }
+        .maps-button:hover, .whatsapp-button:hover, .instagram-button:hover {
+            background-color: #1da24b; /* Verde mais escuro */
+            transform: translateY(-2px);
+        }
+        .whatsapp-icon, .instagram-icon {
+            margin-right: 10px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .watermark {
+            font-size: 0.8em;
+            color: #fff;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .main-section h2 {
+                font-size: 1.8em;
+            }
+            .gallery {
+                grid-template-columns: 1fr; /* Uma coluna no celular */
+            }
+            .maps-button, .whatsapp-button, .instagram-button {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.imgur.com/Cr1pqkB.png" alt="Logo Chácara Paraíso Trussu">
+    </header>
+
+    <section class="main-section">
+        <h2>Bem-vindo ao Paraíso!</h2>
+        <p>Desfrute de momentos incríveis em meio à natureza e tranquilidade.</p>
+        <div class="gallery">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNXrndT5IBNkJe0kz0VvCvIO-31dsy5eR_K5Kx7=s680-w680-h510" alt="Foto 1">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPZpe5z097PA9Ber0QYFRe8kLIWegzUqZGxx7Qr=s680-w680-h510" alt="Foto 2">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOfra8-LscfvalC-uMhHI_CM0v4GDx255IeOnv2=s680-w680-h510" alt="Foto 3">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOQPspQBhZywV0627jjpJaBQ0MmaDgeBBOrafZC=s680-w680-h510" alt="Foto 4">
+            <!-- Adicione mais fotos conforme necessário -->
+        </div>
+        <div class="button-container">
+            <a href="https://maps.app.goo.gl/ETiEf3cxMBHuTWL89" target="_blank" class="maps-button">
+                Como Chegar
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+            <a href="https://wa.me/558898136660?text=Ol%C3%A1%20Chácara%20 Paraíso%20Trussu%2C%20eu%20vim%20pelo%20@victordalmon%2C%20estou%20interessado%20em%20alugar%20a%20chácara." target="_blank" class="whatsapp-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Fale Conosco
+            </a>
+            <a href="https://www.instagram.com/chacaraparaisotrussu/" target="_blank" class="instagram-button">
+                <i class="fab fa-instagram instagram-icon"></i> Siga-nos no Instagram
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chácara Paraíso Trussu. Todos os direitos reservados.</p>
+        <div class="watermark">Criado por @victordalmon</div>
+    </footer>
+
+</body>
+</html>
