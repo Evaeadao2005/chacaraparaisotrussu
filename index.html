@@ -4,175 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chácara Paraíso Trussu</title>
-    
-    <!-- Link para o Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
     <style>
-        /* Reset de margens e preenchimentos */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #e0f7fa; /* Azul claro */
-            color: #333;
+            background: linear-gradient(135deg, #005D52, #2C6B61);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Cabeçalho */
         header {
-            background-color: #fff;
-            padding: 20px;
             text-align: center;
-        }
-        header img {
-            max-width: 200px; /* Logo retangular */
-        }
-        header h1 {
-            font-size: 2.5em;
-            margin: 10px 0;
-        }
-
-        /* Seção Principal */
-        .main-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #ffffff;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .main-section h2 {
-            color: #00796b; /* Verde */
-            font-size: 2em;
+            padding: 60px 20px;
             margin-bottom: 20px;
         }
-        .main-section p {
-            font-size: 1.2em;
-            line-height: 1.6;
+
+        header img {
+            max-width: 140px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            color: #fff;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        .cta-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            margin-top: -30px; /* Para alinhar com o header */
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h3 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             margin-bottom: 30px;
         }
 
-        /* Galeria de Fotos */
+        .cta-button {
+            background: #00BFAE;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            background: #009B7F;
+        }
+
+        .cta-button i {
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+
+        .main-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .main-section h2 {
+            font-size: 3.5em;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .main-section p {
+            font-size: 1.4em;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            opacity: 0.85;
+            max-width: 900px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Múltiplas colunas */
-            gap: 15px;
-            max-width: 1000px;
-            margin: 20px auto;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
         }
-        .gallery img {
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
         }
-        .gallery img:hover {
+
+        .gallery-item img:hover {
             transform: scale(1.05);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        /* Botões */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .maps-button, .whatsapp-button, .instagram-button {
-            background-color: #25D366; /* Cor oficial do WhatsApp */
-            color: #fff;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin: 10px 0; /* Espaçamento entre botões */
-        }
-        .maps-button:hover, .whatsapp-button:hover, .instagram-button:hover {
-            background-color: #1da24b; /* Verde mais escuro */
-            transform: translateY(-2px);
-        }
-        .whatsapp-icon, .instagram-icon {
-            margin-right: 10px;
-        }
-
-        /* Rodapé */
         footer {
-            background-color: #333;
+            background-color: #2C6B61;
             color: #fff;
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
-        }
-        
-        .watermark {
-            font-size: 0.8em;
-            color: #fff;
-            opacity: 0.7;
-            margin-top: 10px;
         }
 
-        /* Responsividade */
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 2.5em;
             }
+
             .main-section h2 {
-                font-size: 1.8em;
+                font-size: 2.5em;
             }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-button {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+
             .gallery {
-                grid-template-columns: 1fr; /* Uma coluna no celular */
-            }
-            .maps-button, .whatsapp-button, .instagram-button {
-                font-size: 1em;
-                padding: 10px 15px;
+                grid-template-columns: 1fr;
             }
         }
     </style>
-<meta name="google-site-verification" content="1MGXyPDNEMZ0VoJJ2-x8uiC0riO1a0fFyojk9na_zto" />
 </head>
 <body>
 
     <header>
         <img src="https://i.imgur.com/Cr1pqkB.png" alt="Logo Chácara Paraíso Trussu">
+        <h1>Chácara Paraíso Trussu</h1>
     </header>
 
-    <section class="main-section">
-        <h2>Bem-vindo ao Paraíso!</h2>
-        <p>Desfrute de momentos incríveis em meio à natureza e tranquilidade.</p>
-        <div class="gallery">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipNXrndT5IBNkJe0kz0VvCvIO-31dsy5eR_K5Kx7=s680-w680-h510" alt="Foto 1">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipPZpe5z097PA9Ber0QYFRe8kLIWegzUqZGxx7Qr=s680-w680-h510" alt="Foto 2">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipOfra8-LscfvalC-uMhHI_CM0v4GDx255IeOnv2=s680-w680-h510" alt="Foto 3">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipOQPspQBhZywV0627jjpJaBQ0MmaDgeBBOrafZC=s680-w680-h510" alt="Foto 4">
-            <!-- Adicione mais fotos conforme necessário -->
-        </div>
-        <div class="button-container">
-            <a href="https://maps.app.goo.gl/ETiEf3cxMBHuTWL89" target="_blank" class="maps-button">
-                Como Chegar
-                <i class="fas fa-map-marker-alt"></i>
+    <!-- Seção de Botões CTA logo abaixo da Logo -->
+    <section class="cta-section">
+        <h3>Entre em Contato Conosco</h3>
+        <div class="cta-buttons">
+            <a href="https://maps.app.goo.gl/ETiEf3cxMBHuTWL89" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Como Chegar
             </a>
-            <a href="https://wa.me/558898136660?text=Ol%C3%A1%20Chácara%20 Paraíso%20Trussu%2C%20estou%20interessado%20em%20alugar%20a%20chácara." target="_blank" class="whatsapp-button">
-                <i class="fab fa-whatsapp whatsapp-icon"></i> Fale Conosco
+            <a href="https://wa.me/558898136660" target="_blank" class="cta-button">
+                <i class="fab fa-whatsapp"></i> Fale Conosco
             </a>
-            <a href="https://www.instagram.com/chacaraparaisotrussu/" target="_blank" class="instagram-button">
-                <i class="fab fa-instagram instagram-icon"></i> Siga-nos no Instagram
+            <a href="https://www.instagram.com/chacaraparaisotrussu/" target="_blank" class="cta-button">
+                <i class="fab fa-instagram"></i> Siga-nos
             </a>
         </div>
     </section>
 
+    <section class="main-section">
+        <h2>Bem-vindo ao Paraíso!</h2>
+        <p>Desfrute de momentos incríveis em meio à natureza e tranquilidade.</p>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNXrndT5IBNkJe0kz0VvCvIO-31dsy5eR_K5Kx7=s680-w680-h510" alt="Foto 1">
+        </div>
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPZpe5z097PA9Ber0QYFRe8kLIWegzUqZGxx7Qr=s680-w680-h510" alt="Foto 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOfra8-LscfvalC-uMhHI_CM0v4GDx255IeOnv2=s680-w680-h510" alt="Foto 3">
+        </div>
+    </section>
+
     <footer>
-   <p>Desenvolvido por Agência Dalmon - <a href="https://www.instagram.com/agenciadalmon" target="_blank">@agenciadalmon</a></p>
-      
+        <p>Desenvolvido por Agência Dalmon - <a href="https://www.instagram.com/agenciadalmon" target="_blank">@agenciadalmon</a></p>
     </footer>
 
 </body>
